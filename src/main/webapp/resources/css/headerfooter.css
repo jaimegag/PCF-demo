@@ -1,0 +1,151 @@
+  body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  font-size: 12px;
+  line-height: 20px;
+  margin: 0 auto;
+}
+.container {
+	margin: 0 auto;
+	padding: 0;
+	width: 1024px;
+}
+.nav-bar {
+	background-color: #272727;
+  padding-right: 0px;
+  padding-left: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  text-align: right;
+}
+.logo {
+	padding: 20px;
+	max-height: 40px;
+	max-width: 300px;
+	float: left;
+}
+#logo_file {
+	max-height: 40px;
+	max-width: 300px;
+}
+
+.nav {
+	padding: 20px;
+}
+.nav-link {
+  margin-right: 5px;
+  margin-left: 5px;
+  padding: 10px 14px;
+  border: 1px solid #666666;
+  border-radius: 4px;
+  background-color: #4d4d4d;
+  background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.24));
+  background-image: -o-linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.24));
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.24));
+  -webkit-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  transition: all 200ms ease;
+  color: white;
+  font-size: 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.nav-link:hover {
+  background-color: #969696;
+  -webkit-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+.footer {
+	background-color: #EEEEEE;
+  font-size: 12px;
+  height: 40px;
+  padding: 20px;
+  
+}
+.footer-text {
+	float: left;
+  margin-top: 10px;
+  font-size: 12px;
+}
+.footer-poweredby {
+  float: right;
+}
+
+/* LeanModal */
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
+
+#ctrlpanel {
+	width: 500px;
+    padding: 10px;
+    display: none;
+    background: #FFF;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.7);
+    -webkit-box-shadow: 0 0 4px rgba(0,0,0,0.7);
+    -moz-box-shadow: 0 0px 4px rgba(0,0,0,0.7);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	font-stretch: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+}
+
+#ctrlpanel-header { background-color: #073f07; padding: 5px 5px 4px 5px; border-bottom: 1px solid #CCC; border-top-left-radius: 5px; -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; border-top-right-radius: 5px; -moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px; }
+#ctrlpanel-header  h2 { color: #DDD; font-size: 2em; font-weight: 700; margin-bottom: 3px; text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5); }
+#ctrlpanel .txt-fld { position: relative; padding: 14px 20px; border-bottom: 1px solid #EEE; text-align: right; }
+#ctrlpanel .btn-fld { overflow: hidden; padding: 12px 20px 12px 130px; }
+#ctrlpanel .txt-fld label {
+	display: block; 
+	float: left; 
+	width: 90px; 
+	padding-top: 2px; 
+	color: #222; 
+	font-size: 1.3em; 
+	text-align: left;
+	margin: 0px;
+}
+#ctrlpanel .txt-fld input {
+	width: 350px; 
+	padding: 8px;
+	height: 25px;
+    line-height: 25px;
+    margin: 0px;
+	border-radius: 4px; 
+	-moz-border-radius: 4px; 
+	-webkit-border-radius: 4px; 
+	font-size: 1.2em; color: #222; 
+	background: #F7F7F7; font-family: 
+	"Helvetica Neue"; 
+	outline: none; 
+	border-top: 1px solid #CCC; border-left: 1px solid #CCC; border-right: 1px solid #E7E6E6; border-bottom: 1px solid #E7E6E6;
+}
+#ctrlpanel .txt-fld input:focus, .txt-fld textarea:focus { background-color: #FAF9DC; }
+#ctrlpanel form { margin: 0px; }
+        
+button {
+	float: right;
+	font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	background: #3F9D4A; 
+	border: none;
+  	width: auto;
+  	overflow: visible;
+  	font-size: 1.4em;
+  	color: #FFF;
+ 	padding: 7px 10px;  border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; font-weight: bold; text-shadow: 0 1px 0 rgba(0,0,0,0.4);}
+        
+.modal_close { position: absolute; top: 12px; right: 12px; display: block; width: 14px; height: 14px; background: url(/resources/img/modal_close.png); z-index: 2; }
+/* End LeanModal */
