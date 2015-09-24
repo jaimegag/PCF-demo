@@ -103,7 +103,6 @@
 	        	<input type="button" value="Orders US Heat Map" class="activate nav-link" >
 	        	<input type="button" value="Start Data Stream" class="activate nav-link" onclick="startStream();">
 	        	<input type="button" value="Kill App" class="activate nav-link" onclick="killApp();">
-	        	<!-- a id="goctrlpanel" rel="leanModal" href="#ctrlpanel"><input type="button" value="Control Panel" class="activate nav-link"></a -->
 	        </div>
 	    </div>
 	</div>
@@ -142,29 +141,6 @@
 	       	<span id="ctrlpanel_color">${credentials['color']}</span>
        	</div>
     </c:if>
-	
-	<!-- Control Panel modal disabled -->
-	<!-- div id="ctrlpanel">
-		<div id="ctrlpanel-ct">
-				<div id="ctrlpanel-header">
-					<h3>Control Panel</h3>
-					<a class="modal_close" href="#"></a>
-				</div>
-				<form action="">
-				  <div class="txt-fld">
-				    <label for="">Logo URL</label>
-				    <input id="" name="ctrlpanel_logo" type="text" />
-				  </div>
-				  <div class="txt-fld">
-				    <label for="">Color</label>
-				    <input id="" name="ctrlpanel_color" type="text" />
-				  </div>
-				  <div class="btn-fld">
-				  	<button type="button" onclick="applyBrand();">Save &raquo;</button>
-				  </div>
-				 </form>
-			</div>
-	</div -->
   		
 
 <script type="text/javascript" src="/resources/js/jquery-1.8.3.js" charset="UTF-8"></script>
@@ -173,10 +149,8 @@
 
 <script type="text/javascript" src="/resources/js/histograms.js" charset="UTF-8"></script>
 
-<script type="text/javascript" src="/resources/js/jquery.leanModal.min.js"></script>
 <script type="text/javascript">
 	$( document ).ready(function() {
-    	//$('#goctrlpanel').leanModal({ top : 200, closeButton: ".modal_close" });
     	// Apply Brand info
     	applyBrand();
 	});
@@ -193,7 +167,6 @@
 		if (color != '') {
 			$('.nav-bar').css("background-color", color);
 		}
-		//$("#lean_overlay").trigger("click");
 	}
 </script>
 
