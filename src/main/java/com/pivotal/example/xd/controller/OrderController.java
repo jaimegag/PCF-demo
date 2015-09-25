@@ -2,7 +2,6 @@ package com.pivotal.example.xd.controller;
 
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -11,12 +10,10 @@ import javax.annotation.PreDestroy;
 import javax.servlet.ServletContext;
 
 import org.apache.log4j.Logger;
-import org.codehaus.jackson.JsonParser;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.Cloud;
 import org.springframework.cloud.CloudFactory;
-import org.springframework.cloud.cloudfoundry.CloudFoundryServiceInfoCreator;
 import org.springframework.cloud.service.ServiceInfo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
