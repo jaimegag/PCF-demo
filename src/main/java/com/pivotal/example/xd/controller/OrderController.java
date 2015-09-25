@@ -14,6 +14,10 @@ import org.apache.log4j.Logger;
 import org.codehaus.jackson.JsonParser;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.Cloud;
+import org.springframework.cloud.CloudFactory;
+import org.springframework.cloud.cloudfoundry.CloudFoundryServiceInfoCreator;
+import org.springframework.cloud.service.ServiceInfo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +28,7 @@ import com.pivotal.example.xd.HeatMap;
 import com.pivotal.example.xd.Order;
 import com.pivotal.example.xd.OrderGenerator;
 import com.pivotal.example.xd.RabbitClient;
+import com.pivotal.example.xd.UserProvidedServiceInfo;
 
 /**
  * Handles requests for the application home page.
@@ -96,14 +101,28 @@ public class OrderController {
 		}
 		
 		//retrieve user-provided config credentials for branding purposes
+		Cloud cloud = new CloudFactory().getCloud();
+    	Iterator<ServiceInfo> services = cloud.getServiceInfos().iterator();
+    	Map<String, Object> credentials = null;
+    	while (services.hasNext()){
+    		ServiceInfo svc = services.next();
+    		if (svc.getId().equals("pcfdemo-config") && svc instanceof UserProvidedServiceInfo) {
+    			UserProvidedServiceInfo service = (UserProvidedServiceInfo)svc;
+    			credentials = service.getCredentials();
+    		}
+    	}
+    	model.addAttribute("credentials", credentials);
+    	
+    	/*
+    	 * Quick & Dirty solution to get the service credentials from the environment directly and parse the JSON
 		if(System.getenv("VCAP_SERVICES") != null){
 			// Map of services
 			Map vcapServMap = mapper.readValue(System.getenv("VCAP_SERVICES"), Map.class);
 			model.addAttribute("credentials", ((Map)((List)vcapServMap.get("user-provided")).get(0)).get("credentials"));
-			// TODO Iterate and return only the one with name pcfdemo-config instead of the user-provided service with index 0
-			// TODO Use Cloud.getServiceInfos and read from there
 		}
-		
+		*/
+    	
+    	
         return "WEB-INF/views/pcfdemo.jsp";
     }
 
