@@ -1,9 +1,19 @@
 ---
 applications:
-- name: pcfdemo
+- name: pcfdemo-producer
   memory: 512M 
   instances: 1
-  host: pcfdemo-${random-word}
-  path: ./target/pcfdemo.war
-  env:
-   JAVA_OPTS: -Djava.security.egd=file:///dev/urandom
+  host: pcfdemo-producer-${random-word}
+  path: PCFDemo-producer/src
+  timeout: 90
+  services:
+   - myrabbit
+- name: pcfdemo-map
+  memory: 512M 
+  instances: 2
+  host: pcfdemo-map-${random-word}
+  path: PCFDemo-map/target/pcfdemo-map.war
+  timeout: 90
+  services:
+   - myrabbit
+
