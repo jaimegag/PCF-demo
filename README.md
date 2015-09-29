@@ -14,8 +14,8 @@ Click "Stream Data" and see the fun start. Click on a state to detail orders goi
 
 Additional fun: click "Kill App" and watch the application crashing.. it will show as "crashed" when you visualize events (cf events <app_name>). Health manager will automatically restart the app for you. => makes a good demo, too.
 
-Branding: If you want a specific company logo and color for the header you can create a user-provided service with credentials 'color' and 'logo', and those values will ne used instead of the default ones (black and "Best Retailer, Inc") in the UI.
+Branding: If you want a specific company logo and color for the header you can create a user-provided service with credentials 'color' and 'logo', and those values will be used instead of the default ones (black and "Best Retailer, Inc") in the UI.
 You can create this environment configuration using cf cups. Example:
 ```
-cf cups pcfdemo-config -p '{"logo":"http://sweregionb.org/wp_files/wp-content/uploads/2014/10/Honeywell-logo.jpg", "color":"red"}'
+cf cups pcfdemo-config -p '{"logo":"http://sweregionb.org/wp_files/wp-content/uploads/2014/10/Honeywell-logo.jpg", "color":"red", "pcfdemouri":"http://example.com"}'
 ``` 
