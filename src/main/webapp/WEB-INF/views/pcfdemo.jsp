@@ -109,7 +109,7 @@
 
 	<div id="maincontent" style="overflow-y: scroll;">
 		<div align="center"> 
-        <small>NEW!!! Instance hosted at &nbsp;<%=request.getLocalAddr() %>:<%=request.getLocalPort() %></small><br>
+        <small>Instance hosted at &nbsp;<%=request.getLocalAddr() %>:<%=request.getLocalPort() %></small><br>
         <c:if test="${vcap_app != null && !empty vcap_app}">
         	<small>Instance Index &nbsp;<em>${vcap_app['instance_index']}</em></small><br>
         </c:if>
@@ -137,13 +137,14 @@
 	</div>
 	<c:if test="${credentials != null && !empty credentials}">
 		<div style="display: none;">
-    	   	<span id="ctrlpanel_logo">${credentials['logo']}</span>
-	       	<span id="ctrlpanel_color">${credentials['color']}</span>
-       	</div>
-    </c:if>
-  		
+			<span id="ctrlpanel_logo">${credentials['logo']}</span>
+			<span id="ctrlpanel_color">${credentials['color']}</span>
+		</div>
+	</c:if>
 
-<script type="text/javascript" src="/resources/js/jquery-1.8.3.js" charset="UTF-8"></script>
+
+
+	<script type="text/javascript" src="/resources/js/jquery-1.8.3.js" charset="UTF-8"></script>
 <script type="text/javascript" src="/resources/js/d3.v3.js" charset="UTF-8"></script>
 <script type="text/javascript" src="/resources/js/rainbowvis.js" charset="UTF-8"></script>
 
@@ -159,12 +160,12 @@
 		var color = $('#ctrlpanel_color').html();
 		console.log("logo: " + logo);
 		console.log("color: " + color);
-		if (logo != '') {
+		if (logo != undefined && logo != '') {
 			$('#logo_file').attr("src", logo);
 		} else {
 			$('#logo_file').attr("src", "resources/img/BestRetailInc_Logo.png");
 		}
-		if (color != '') {
+		if (color != undefined && color != '') {
 			$('.nav-bar').css("background-color", color);
 		}
 	}
