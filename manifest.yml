@@ -3,7 +3,8 @@ applications:
 - name: pcfdemo
   memory: 512M 
   instances: 1
-  host: pcfdemo-${random-word}
+  host: pcfdemo-retail
   path: ./target/pcfdemo.war
   env:
-   JAVA_OPTS: -Djava.security.egd=file:///dev/urandom
+    JAVA_OPTS: -Djava.security.egd=file:///dev/urandom
+  services: [rabbit-instance,  autoscaler-instance, mylogger]

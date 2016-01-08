@@ -25,6 +25,7 @@ import com.pivotal.example.xd.HeatMap;
 import com.pivotal.example.xd.Order;
 import com.pivotal.example.xd.OrderGenerator;
 import com.pivotal.example.xd.RabbitClient;
+import com.pivotal.example.xd.TimeItem;
 import com.pivotal.example.xd.UserProvidedServiceInfo;
 
 /**
@@ -178,6 +179,19 @@ public class OrderController {
     	heatMap.assignColors();
     	return heatMap;
 
+    }
+    
+    @RequestMapping(value="/getTime")
+    public @ResponseBody TimeItem getTime(){
+			//mostly bad code that takes time
+			String str = "";
+			for (long i = 0; i < 100000000l; i++) {
+				if(i%10000 == 0) {
+					str = str + ".";
+				}
+			}
+			logger.info("progress: " + str);
+			return new TimeItem(System.currentTimeMillis(), Long.toString(System.currentTimeMillis()));
     }
     
     
