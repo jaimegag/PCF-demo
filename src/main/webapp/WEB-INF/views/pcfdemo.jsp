@@ -95,7 +95,7 @@
 
 
     <div class="container">
-    	<div class="nav-bar">
+    	<div class="nav-bar backgreen">
 	        <div class="logo">
 	          <img id="logo_file" src="resources/img/BestRetailInc_Logo.png" alt="Best Retail, Inc.">
 	        </div>
