@@ -108,7 +108,8 @@
 	</div>
 
 	<div id="maincontent" style="overflow-y: scroll;">
-		<div align="center"> 
+		<div align="center">
+		<small>new change!</small> 
         <small>Instance hosted at &nbsp;<%=request.getLocalAddr() %>:<%=request.getLocalPort() %></small><br>
         <c:if test="${vcap_app != null && !empty vcap_app}">
         	<small>Instance Index &nbsp;<em>${vcap_app['instance_index']}</em></small><br>
